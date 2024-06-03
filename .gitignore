@@ -142,6 +142,7 @@ ENV/
 env.bak/
 venv.bak/
 
+
 # Configuración del proyecto Spyder
 .proyecto spyder
 .proyecto espía
@@ -283,5 +284,5 @@ pyrightconfig.json
 # Ignorar todo el historial local de archivos
 .historia
 .ionuro
-
+mi-proyecto-venv/
 # Fin de https://www.toptal.com/developers/gitignore/api/python,django,visualstudiocode
