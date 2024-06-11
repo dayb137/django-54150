@@ -25,8 +25,15 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href={% url "inicio" %}>Inicio</a>
-                <a class="btn btn-brand" href={% url "probando" %}>Probando</a>
-                <a class="btn btn-brand" href={% url "crear_auto" "Ford" "k" %}>Crear Auto</a>                
+                <a class="navbar-brand" href={% url "probando" %}>Probando</a>
+                {% comment %} V1 {% endcomment %}
+                {% comment %} <a class="btn btn-brand" href={% url "crear_auto" "Ford" "k" %}>Crear Auto</a>     {% endcomment %}
+                {% comment %} V2 {% endcomment %}
+                <a class="navbar-brand" href={% url "crear_auto_v2"%}>Crear Auto</a>  
+                <a class="navbar-brand" href={% url "autos"%}>Autos</a>  
+
+                {% comment %} <a class="btn btn-brand" href={% url "crear_auto_v2" "Ford" "k" %}>Crear Auto</a>     {% endcomment %}
+
                 {% comment %} <a class="btn btn-primary" href={% url "crear_auto""Ford""k"%}>Crear Auto</a> {% endcomment %}
 
             </div>
@@ -40,7 +47,7 @@
                             <!-- Page heading-->
                          <h1 clss='mb-5'>
                             {% block h1_header %}
-                            Soy el base
+                            
                             {% endblock h1_header  %}
                          </h1>  
                         </div>
