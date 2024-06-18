@@ -10,17 +10,33 @@ Listado de autos
 {% endblock h1_header %}
 
 {% block main %}
+
+<a href={% url "crear_auto_v2"%}>Crear Auto</a>
+
+<form action={% url "autos" %} method="get">
+
+    {{formulario}}
+
+    <input type="submit" value='buscar'>
+</form>
+
+
 {% if autos %}
-<ul>
+    <ul>
     
-    {% for auto in autos %}
-    <li>{{auto}}</li>
-    {% endfor %}
+        {% for auto in autos %}
+        <li>{{auto}}|
+            <a href={% url "eliminar_auto" auto.id%}>Eliminar</a> |
+            <a href={% url "editar_auto" auto.id%}>Editar</a></li>|
+            <a href={% url "ver_auto" auto.id%}>Ver</a> 
+
+        {% endfor %}
     
     </ul>
-    {% else %}
-    <p>No hay autos creados.</p>
-    {% endif %}
+    
+{% else %}
+<p>No hay autos creados.</p>
+{% endif %}
 
 {% endblock main %}
 
