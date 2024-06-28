@@ -19,11 +19,11 @@ Listado de paletas
     
         {% for paleta in paletas %}
         <li>{{paleta}} |
-            {% comment %} <a href={% url "eliminar_paleta" paleta.id%}>Eliminar</a> |
-            <a href={% url "editar_paleta" paleta.id%}>Editar</a></li> | {% endcomment %}
+            <a href={% url "eliminar_paleta" paleta.id%}>Eliminar</a> |
+            <a href={% url "editar_paleta" paleta.id%}>Editar</a></li> | 
             <a href={% url "ver_paleta" paleta.id%}>Ver</a>  
+        </li> 
         {% endfor %}
-    
     </ul>
     
 {% else %}
