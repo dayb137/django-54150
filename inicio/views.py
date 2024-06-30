@@ -10,6 +10,7 @@ from inicio.forms import CrearAutoFormulario, BuscarAuto, EditarAutoFormulario
 
 import random
 
+from django.contrib.auth.decorators import login_required
 
 def inicio(request):
     #v1
@@ -153,12 +154,13 @@ def autos(request):
     
     return render(request, 'inicio/autos.html', {'autos':autos , 'formulario':formulario})
 
+@login_required
 def eliminar_auto(request, id):
     auto = Auto.objects.get(id=id)
     auto.delete()
-    
     return redirect('autos')
 
+@login_required
 def editar_auto(request, id):
     auto = Auto.objects.get(id=id)
     

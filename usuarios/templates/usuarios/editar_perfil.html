@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Editar perfil
+{% endblock title_head %}
+
+{% block h1_header %}
+Editar perfil
+{% endblock h1_header %}
+
+{% block main %}
+
+<form action={% url "editar_perfil" %} method='POST' enctype='multipart/form-data'>
+    {% csrf_token %}
+
+    {{formulario}}
+
+    <input type="submit" value='Actualizar'>
+
+</form>
+
+<a href="{% url "cambiar_pass" %}">Cambiar Password</a>
+
+
+{% endblock main %}
