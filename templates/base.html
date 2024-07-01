@@ -35,7 +35,12 @@
                 <a class="navbar-brand" href={% url "paletas"%}>Paletas</a> 
                 {% if request.user.is_authenticated %}
                 <a class="navbar-brand" href={% url "autos"%}>Autos</a> 
-                <a class="navbar-brand" href={% url "editar_perfil" %}>{{request.user.username}}</a> 
+                <a class="navbar-brand" href={% url "editar_perfil" %}>
+                    {% if request.user.datosextra.avatar %}
+                    <img src={{request.user.datosextra.avatar.url}}lt='Avatar' height='40px'>
+                    {% endif %}
+                    {{request.user.username}}
+                </a> 
                     <form action={% url "logout" %} method='POST'>
                         {% csrf_token %}
                         <input type="submit" class="btn btn-secondary" value='Cerrar sesion'>

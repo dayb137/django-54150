@@ -20,11 +20,11 @@ def login(request):
             usuario=formulario.cleaned_data.get('username')
             password=formulario.cleaned_data.get('password')
             
-            user = authenticate( username=usuario, password=password)
+            user = authenticate(request,username=usuario, password=password)
             
             django_login(request, user)
             
-            DatosExtra.objects.get_or_create()
+            DatosExtra.objects.get_or_create(user=user)
             
             return redirect('inicio')
     
